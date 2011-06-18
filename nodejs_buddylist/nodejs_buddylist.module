@@ -24,6 +24,13 @@ function nodejs_buddylist_menu() {
 	      'position' => 'left',
 	      'weight' => 1,
 	    ),
+		'admin/config/nodejs/nodejs_buddylist/overseer' => array(
+		      'title' => 'Overseer',
+		      'description' => 'Dashboard for seeing all logged in users.',
+		      'page callback' => 'nodejs_buddylist_overseer_page',
+		      // 'page arguments' => array('nodejs_buddylist_settings_form'),
+		      'access arguments' => array('administer nodejs_buddylist settings'),
+		),
 	    'admin/config/nodejs/nodejs_buddylist/settings' => array(
 	      'title' => 'Node.js Buddylist Settings',
 	      'description' => 'Settings for node.js buddylist.',
@@ -31,6 +38,7 @@ function nodejs_buddylist_menu() {
 	      'page arguments' => array('nodejs_buddylist_settings_form'),
 	      'access arguments' => array('administer nodejs_buddylist settings'),
 	    ),
+		 
 	);
 }
 
@@ -65,6 +73,11 @@ function nodejs_buddylist_nodejs_user_channels($account) {
 function nodejs_buddylist_settings_form() {
 	$form = array();
 	return $form;
+}
+
+function nodejs_buddylist_overseer_page() {
+	$output = 'This is the page where an admin should be able to see all users';
+	return $output;
 }
 
 /*
