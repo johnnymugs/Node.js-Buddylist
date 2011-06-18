@@ -24,3 +24,58 @@ function nodejs_buddylist_settings_form() {
 	$form = array();
 	return $form;
 }
+
+/*
+ * Implementation of hook_block_info
+ *
+ */
+function nodejs_buddylist_block_info() {
+  $blocks = array();
+  
+  $blocks['nodejs_buddylist_all'] = array(
+    'info' => 'Nodejs Buddylist admin view all users',
+    'cache' => DRUPAL_NO_CACHE,
+  );
+
+  $blocks['nodejs_buddylist_users_for_channel'] = array(
+    'info' => 'Nodejs Buddylist show users for a specified channel',
+    'cache' => DRUPAL_NO_CACHE,
+  );
+
+  $blocks['nodejs_buddylist_buddylist'] = array(
+    'info' => 'Nodejs Buddylist a specific user''s buddylist.',
+    'cache' => DRUPAL_NO_CACHE,
+  );
+  
+  return $blocks;
+}
+
+/*
+ * Implementation of hook_block_view
+ *
+ */
+function nodejs_buddylist_block_view($delta = '') {
+  $block = array();
+  
+  switch($delta) {
+    case 'nodejs_buddylist_all':
+      $block['subject'] = 'All Users';
+      $block['content'] = 'Content for all users';
+    break;
+
+	case 'nodejs_buddylist_users_for_channel':
+	  $block['subject'] = 'All Users for a channel';
+      $block['content'] = 'Content for all users per channel';
+    break;
+
+	case 'nodejs_buddylist_buddylist':
+      $block['subject'] = 'Your Buddylist';
+      $block['content'] = 'Content for user''s buddylist';
+    break;
+
+    default:
+    break;
+  }
+  
+  return $block;
+}
