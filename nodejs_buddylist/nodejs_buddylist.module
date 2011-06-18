@@ -8,3 +8,19 @@
 function nodejs_buddylist_menu() {
 	
 }
+
+/**
+ * Implements hook_nodejs_user_channels().
+ */
+function nodejs_buddylist_nodejs_user_channels($account) {
+  //execute code for when a user joins a channel
+}
+
+/**
+ * Nodejs Buddy list settings form
+ *
+ */
+function nodejs_buddylist_settings_form() {
+	$form = array();
+	return $form;
+}
