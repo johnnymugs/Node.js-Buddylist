@@ -121,7 +121,9 @@ function nodejs_buddylist_block_view($delta = '') {
 function nodejs_buddylist_user_login(&$edit, $account) {
 	//Load the existing user's friends
 	$friends = flag_friend_get_friends($account->uid);
-	print_r($friends);die();
+	foreach($friends as $friend_index => $friend){
+		//Reload the buddy list of each of these people $friend->uid
+	}
 }
 
 /*
@@ -130,14 +132,26 @@ function nodejs_buddylist_user_login(&$edit, $account) {
  */
 function nodejs_buddylist_user_logout($account) {
 	//execute code for when a user logs out
+	$friends = flag_friend_get_friends($account->uid);
+	foreach($friends as $friend_index => $friend){
+		//Reload the buddy list of each of these people $friend->uid
+	}
 }
 
 /*
  * nodejs_buddylist_render_all_users_unordered_list
  *
  */
-
 function nodejs_buddylist_render_all_online_users_unordered_list() {
 	$output;
 	return $output;
+}
+
+/*
+ * nodejs_buddylist_reload_friends_lists
+ *
+ */
+function nodejs_buddylist_reload_friends_lists($uid) {
+	//Load a specific person's buddy list by uid
+	//Execute a callback on the channel that user is on.
 }
