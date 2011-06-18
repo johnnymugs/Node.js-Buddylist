@@ -1,0 +1,10 @@
+<?php
+
+/*
+ * Implements hook_menu()
+ *
+ */
+
+function nodejs_buddylist_menu() {
+	
+}
