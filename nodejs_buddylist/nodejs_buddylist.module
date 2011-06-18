@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * Implements hook_init().
+ */
+function nodejs_buddylist_init() {
+  drupal_add_js(array('nodejs_buddylist' => array('max_buddies' => variable_get('nodejs_buddylist_max_buddies', 0))), 'setting');
+}
+
 /*
  * Implements hook_menu()
  *
@@ -48,6 +55,7 @@ function nodejs_buddylist_permission() {
  */
 function nodejs_buddylist_nodejs_user_channels($account) {
   //execute code for when a user joins a channel
+  //notify or execute code for all users on this channel
 }
 
 /**
