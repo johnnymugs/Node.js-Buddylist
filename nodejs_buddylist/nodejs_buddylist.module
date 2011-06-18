@@ -79,3 +79,19 @@ function nodejs_buddylist_block_view($delta = '') {
   
   return $block;
 }
+
+/*
+ * Implementation of hook_user_login
+ *
+ */
+function nodejs_buddylist_user_login(&$edit, $account) {
+	//execute code for when a user logs in
+}
+
+/*
+ * Implementation of hook_user_logout
+ *
+ */
+function nodejs_buddylist_user_logout($account) {
+	//execute code for when a user logs out
+}
